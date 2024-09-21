@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<body>
+<table>
+    <thead>
+    <tr>
+        <th> Model</th>
+        <th> Color</th>
+        <th> Year</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${cars.isEmpty()}">
+        <td colspan="2"> No cars available</td>
+    </tr>
+    <tr th:each="car : ${cars}">
+        <td><span th:text="${car.getModel()}"> Model </span></td>
+        <td><span th:text="${car.getColor()}"> Color </span></td>
+        <td><span th:text="${car.getYear()}"> Year </span></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
