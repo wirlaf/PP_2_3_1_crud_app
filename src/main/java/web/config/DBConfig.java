@@ -20,7 +20,7 @@ import java.util.Properties;
 @PropertySource("classpath:db.properties")
 @EnableTransactionManagement
 @ComponentScan(value = "web")
-public class AppConfig {
+public class DBConfig {
 
     @Autowired
     private Environment env;

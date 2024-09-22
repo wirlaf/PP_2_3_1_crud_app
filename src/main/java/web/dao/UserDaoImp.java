@@ -19,6 +19,26 @@ public class UserDaoImp implements UserDao {
     }
 
     @Override
+    public User get(Long id) {
+        return sessionFactory.getCurrentSession().get(User.class, id);
+    }
+
+    @Override
+    public void update(Long id, User user) {
+        User userToBeUpdated = get(id);
+        userToBeUpdated.setFirstName(user.getFirstName());
+        userToBeUpdated.setLastName(user.getLastName());
+        userToBeUpdated.setEmail(user.getEmail());
+        sessionFactory.getCurrentSession().update(userToBeUpdated);
+    }
+
+    @Override
+    public void delete(Long id) {
+        User user = sessionFactory.getCurrentSession().get(User.class, id);
+        sessionFactory.getCurrentSession().delete(user);
+    }
+
+    @Override
     @SuppressWarnings("unchecked")
     public List<User> listUsers() {
         String hql = "from User";
