@@ -20,9 +20,9 @@
         <td><span th:text="${user.getFirstName()}"> </span></td>
         <td><span th:text="${user.getLastName()}"> </span></td>
         <td><span th:text="${user.getEmail()}"> </span></td>
-        <td><a th:href="@{/users/{id}/edit(id=${user.getId()})}" th:text="edit"></a></td>
+        <td><a th:href="@{/users/edit/?id={id}(id=${user.getId()})}" th:text="edit"></a></td>
         <th> /</th>
-        <td><a th:href="@{/users/{id}/delete(id=${user.getId()})}" th:text="delete"></a></td>
+        <td><a th:href="@{/users/delete/?id={id}(id=${user.getId()})}" th:text="delete"></a></td>
     </tr>
     </tbody>
 </table>
